@@ -1,40 +1,210 @@
+/* Section À propos */
 #about {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #f0f4f7;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+#about .row {
+    align-items: center; /* Aligne le texte et l'image verticalement */
 }
 
 #about img {
     max-width: 100%;
-    border-radius: 8px;
+    width: 280px;
+    border-radius: 10px;
+    border: 3px solid #007bff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+#services {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #ffffff;
 }
 
+#services .col-md-4 {
+    background-color: #f8f9fa; /* Couleur douce de fond pour chaque service */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
 
-#services {
-    padding-top: 30px;
-    padding-bottom: 30px;
+#services .col-md-4:hover {
+    transform: translateY(-10px); /* Légère élévation au survol */
 }
 
 #services i {
-    color: #007bff; /* Couleur bleue pour les icônes */
+    color: #007bff;
     margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out;
 }
 
+#services i:hover {
+    transform: scale(1.2);
+}
+
+/* Section Portfolio */
 #portfolio {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #f8f9fa; /* Couleur de fond douce */
 }
 
 #portfolio .card {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    transition: transform 0.3s ease-in-out; /* Animation au survol */
+}
+
+#portfolio .card:hover {
+    transform: translateY(-10px); /* Légère élévation au survol */
 }
 
 #contact {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #ffffff;
+}
+
+#contact form {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #contact button {
     background-color: #007bff;
     border: none;
     margin-top: 15px;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#contact button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+section {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* Section Témoignages */
+
+
+#testimonials {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #f0f4f7; /* Couleur douce pour le fond de la section */
+}
+
+#testimonials .col-md-4 {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+    text-align: center; /* Centrer le texte */
+}
+
+#testimonials .col-md-4:hover {
+    transform: scale(1.05);
+}
+
+blockquote {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    quotes: "“" "”" "‘" "’";
+}
+
+blockquote::before {
+    content: open-quote;
+    font-size: 2rem;
+    color: #5a6268; /* Couleur grise douce pour les guillemets */
+    margin-right: 5px;
+}
+
+blockquote::after {
+    content: close-quote;
+    font-size: 2rem;
+    color: #5a6268; /* Couleur grise douce pour les guillemets */
+    margin-left: 5px;
+}
+
+blockquote footer {
+    font-size: 1rem;
+    color: #6c757d; /* Couleur grise plus claire pour le nom du client */
+    margin-top: 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+footer a {
+    color: #ffffff;
+    margin: 0 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+footer a:hover {
+    color: #d4d4d4;
+}
+
+/* Body et Fond */
+body {
+    font-family: 'Poppins', sans-serif; /* Typographie harmonisée */
+    color: #333;
+    background-image: url('img/background.png'); /* Assure-toi de remplacer 'background.png' par le nom de ton image */
+    background-size: cover; /* Remplissage complet de la page */
+    background-position: center; /* Centre l'image */
+    background-repeat: no-repeat; /* Évite la répétition */
+    position: relative; /* Contrôle du z-index */
+    z-index: 0; /* Arrière-plan */
+}
+
+/* Wrapper pour le contenu */
+.content-wrapper {
+    z-index: 1;
+    background-color: rgba(194, 216, 232, 0.9); /* Fond blanc avec transparence */
+    padding: 20px; /* Espacement autour du contenu */
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: background-color 0.3s ease-in-out;
+    padding: 15px 20px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #007bff;
 }
