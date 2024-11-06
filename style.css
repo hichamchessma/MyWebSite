@@ -1,0 +1,40 @@
+#about {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#about img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+
+#services {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#services i {
+    color: #007bff; /* Couleur bleue pour les icônes */
+    margin-bottom: 15px;
+}
+
+#portfolio {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#portfolio .card {
+    margin-bottom: 20px;
+}
+
+#contact {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#contact button {
+    background-color: #007bff;
+    border: none;
+    margin-top: 15px;
+}
