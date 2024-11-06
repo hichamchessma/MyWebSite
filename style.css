@@ -1,10 +1,28 @@
 /* Section À propos */
 #about {
+    position: relative; /* Position relative pour l'utilisation du pseudo-élément */
     padding-top: 60px;
     padding-bottom: 60px;
-    background-color: #f0f4f7;
+    background-image: url('img/developpeurs.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border-radius: 10px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    z-index: 1; /* Pour s'assurer que le texte est au-dessus du calque */
+}
+
+#about::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Calque noir semi-transparent pour plus d'opacité */
+    border-radius: 10px;
+    z-index: -1; /* Place le calque derrière le contenu de la section */
 }
 
 #about .row {
@@ -12,15 +30,15 @@
 }
 
 #about img {
-    max-width: 100%;
-    width: 280px;
-    border-radius: 10px;
-    border: 3px solid #007bff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 0 auto;
-    display: block;
-    transition: transform 0.3s ease-in-out;
+    width: 280px !important; /* Fixe la largeur de l'image */
+    height: 280px !important; /* Fixe la hauteur de l'image pour correspondre */
+    border-radius: 50% !important; /* Rend l'image circulaire */
+    border: 3px solid #007bff !important; /* Ajoute une bordure bleue */
+    object-fit: cover !important; /* Remplit bien l'image dans un cercle sans déformation */
+    display: block !important;
+    margin: 0 auto !important; /* Centre l'image horizontalement */
 }
+
 #services {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -155,7 +173,7 @@ blockquote footer {
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #007bff;
+    background-color: #f4c3b4;
     color: #ffffff;
 }
 
@@ -190,21 +208,49 @@ body {
 
 /* Navbar */
 .navbar {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: #ffffff; /* Fond blanc pour contraste */
     transition: background-color 0.3s ease-in-out;
     padding: 15px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce pour donner de la profondeur */
+    border-radius: 8px; /* Coins arrondis pour un style plus moderne */
 }
 
+/* Marque de la navbar */
 .navbar-brand {
     font-weight: bold;
-    font-size: 1.4rem;
+    font-size: 1.6rem; /* Augmenter légèrement la taille pour la mettre en valeur */
+    color: #007bff; /* Couleur bleue pour la marque */
+    transition: color 0.3s ease-in-out;
 }
 
+.navbar-brand:hover {
+    color: #0056b3; /* Couleur plus foncée au survol pour mettre en valeur */
+}
+
+/* Liens de la navbar */
 .navbar-light .navbar-nav .nav-link {
     font-size: 1.1rem;
-    transition: color 0.3s;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    color: #333333; /* Couleur gris foncé pour un meilleur contraste */
+    padding: 10px 15px; /* Ajout d'espace autour pour rendre les liens plus cliquables */
+    font-weight: 500; /* Légèrement plus épais pour une meilleure lisibilité */
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-    color: #007bff;
+    color: #007bff; /* Changement de couleur au survol */
+    transform: translateY(-3px); /* Élève légèrement le lien au survol */
+    text-decoration: underline; /* Ajoute une ligne au survol pour indiquer l'interaction */
+}
+
+/* Navbar mobile toggler */
+.navbar-toggler {
+    border: none; /* Supprime la bordure du bouton toggle */
+    outline: none; /* Supprime la bordure lors du focus */
+}
+
+.navbar-toggler-icon {
+    background-color: #007bff; /* Change la couleur de l'icône du toggler */
+    border-radius: 50%; /* Donne une forme arrondie */
+    padding: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ajoute une ombre à l'icône */
 }

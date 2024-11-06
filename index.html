@@ -53,12 +53,10 @@
     <div class="row">
         <div class="col-md-6">
             <h2>À propos de moi</h2>
-            <p>Je suis Hicham Ammor, développeur passionné spécialisé dans la création de sites web 
-                et d'applications Android. Avec plusieurs années d'expérience, j'aide les entreprises 
-                et les particuliers à concrétiser leurs idées grâce à des solutions technologiques sur mesure.</p>
-                <p>Je suis Hicham Ammor, développeur passionné spécialisé dans la création de sites web 
-                    et d'applications Android. Avec plusieurs années d'expérience, j'aide les entreprises 
-                    et les particuliers à concrétiser leurs idées grâce à des solutions technologiques sur mesure.</p>
+            <p>Chez HiTech Digitals, nous sommes des artisans du numérique, engagés à transformer vos visions en solutions innovantes. Avec plus de 10 ans d'expérience, nous créons des sites web intuitifs et des applications mobiles robustes qui génèrent de la valeur.
+
+                Chaque projet est unique, et notre approche repose sur l'écoute, l'innovation, et une qualité sans compromis. Nous transformons vos défis en opportunités digitales pour vous démarquer et conquérir de nouveaux horizons. À HiTech Digitals, nous bâtissons des expériences durables et mettons notre savoir-faire au service de vos rêves digitaux.</p>
+                
         </div>
         <div class="col-md-6">
             <img src="img/photoHicham.png" alt="Hicham Ammor" class="img-fluid rounded">
@@ -127,21 +125,22 @@
     <h2 class="text-center">Contact</h2>
     <div class="row mt-4">
         <div class="col-md-8 offset-md-2">
-            <form>
+            <form id="contactForm">
                 <div class="form-group">
                     <label for="name">Nom</label>
-                    <input type="text" class="form-control" id="name" placeholder="Votre nom">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Votre nom" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Votre email">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Votre email" required>
                 </div>
                 <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea class="form-control" id="message" rows="4" placeholder="Votre message"></textarea>
+                    <textarea class="form-control" id="message" name="message" rows="4" placeholder="Votre message" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Envoyer</button>
             </form>
+            
         </div>
     </div>
 </section>
@@ -177,5 +176,44 @@
     </div>
 
 </body>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Empêche le rechargement de la page
+
+        // Récupérer les valeurs des champs
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        // Créer un objet avec les données du formulaire
+        const formData = {
+            name: name,
+            email: email,
+            message: message
+        };
+
+        // Envoyer les données à l'API
+        fetch('https://example.com/api/contact', { // Remplace l'URL par celle de ton API
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Traitement en cas de succès
+            console.log('Success:', data);
+            alert('Votre message a été envoyé avec succès!');
+        })
+        .catch((error) => {
+            // Traitement en cas d'erreur
+            console.error('Error:', error);
+            alert('Une erreur est survenue, veuillez réessayer plus tard.');
+        });
+    });
+</script>
+
 
 </html>
